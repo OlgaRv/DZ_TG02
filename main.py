@@ -97,10 +97,6 @@ async def handle_photo(message: types.Message):
     await bot.download_file(file_path, file_name)
     await message.reply(f"Фото сохранено как {file_name}")
 
-# Обработчик текстовых сообщений для других случаев
-@dp.message(F.text)
-async def handle_other_text(message: Message):
-    await message.reply("Пожалуйста, используйте команды /help для получения списка доступных команд.")
 
 async def main():
     await dp.start_polling(bot)
